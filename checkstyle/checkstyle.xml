@@ -17,7 +17,13 @@
       <property name="ignorePattern" value="^.*@see.*$"/>
       <property name="max" value="128"/>
   </module>
+  <!-- required in order to use @SuppressWarnings for Checkstyle Warnings, see
+   https://stackoverflow.com/questions/27688426/ignoring-of-checkstyle-warnings-with-annotation-suppresswarnings -->
+  <module name="SuppressWarningsFilter"/>
   <module name="TreeWalker">
+    <!-- required in order to use @SuppressWarnings for Checkstyle Warnings, see
+     https://stackoverflow.com/questions/27688426/ignoring-of-checkstyle-warnings-with-annotation-suppresswarnings -->
+    <module name="SuppressWarningsHolder"/>
     <!-- deleted <module name="FileContentsHolder"/>, see https://checkstyle.org/releasenotes.html#Release_8.2 -->
     <module name="ConstantName"/>
     <module name="LocalFinalVariableName"/>
